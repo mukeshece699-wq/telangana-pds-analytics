@@ -1,0 +1,3 @@
+class Config:
+    RANDOM_STATE = 42
+    N_CLUSTERS = 4

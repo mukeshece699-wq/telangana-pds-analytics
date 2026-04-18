@@ -1,0 +1,12 @@
+import pandas as pd
+
+def load_data(trans_path, card_path, location_path):
+    trans = pd.read_csv(trans_path)
+    card = pd.read_csv(card_path)
+    loc = pd.read_csv(location_path)
+
+    # merge datasets
+    df = trans.merge(card, on=["shopNo", "distCode"], how="left")
+    df = df.merge(loc, on=["shopNo", "distCode"], how="left")
+
+    return df
